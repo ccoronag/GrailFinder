@@ -1,0 +1,274 @@
+body{
+    font-family: sans-serif;
+    margin: 0px;
+    overflow: hidden;
+    min-height: 100vh;
+    background: linear-gradient(130deg, black 10%, purple 110%);
+    background-attachment: fixed;
+}
+.montserrat-light {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+header h1{
+    font-size: 1900%;
+    margin-top: 0px;
+    margin-bottom: 0%;
+    color: rgb(230, 230, 230);
+}
+header{
+    height: 100vh;
+    width: 100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: rgba(0, 0, 0, 0.39);
+    transition: .5s ease-in-out;
+    opacity: 100%;
+    z-index: 1;
+
+}
+header div{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    border-width: 1px;
+    height:25vh;
+    width:50%;
+    background-color: rgba(255, 0, 0, 0);
+}
+header a{
+    outline: 2px solid rgb(255, 255, 255);
+    color: rgb(230, 230, 230);
+    text-decoration: none;
+    margin: 10px;
+    font-size: 175%;
+    background-color: rgba(184, 184, 184, 0.315);
+    border-radius: 50px;
+    padding: 20px 40px;
+    transition: .2s all;
+}
+header a:hover{
+    background-color: black;
+    color:white;
+}
+
+/* #search_section{
+    min-height: 100vh;
+    background: linear-gradient(130deg, black 10%, purple 110%);
+    background-attachment: fixed;
+} */
+
+#search_section{
+    min-height: 100vh;
+}
+
+#content_container{
+    height: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0%;
+    transition: .5s ease-in;
+    flex: 1;
+    /* outline: 10px solid blue; */
+    /* background-color: red; */
+}
+#UI_container{
+    /* outline: 2px solid rgb(255, 255, 255); */
+    width: 60%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    /* background-color: rgba(0, 0, 0, 0.096); */
+}
+#UI_container h1{
+    color: white;
+    font-size: 400%;
+    /* margin: 0%; */
+    margin:2% 2% 1% .5%;
+}
+#UI_container input{
+    width: 60%;
+    padding: 20px;
+    font-size: 110%;
+    background-color: rgba(0, 0, 0, 0.329);
+    border-radius: 40px;
+    color: white;
+}
+#search_bar_container button{
+    margin-left: 1%;
+    margin-right: 1%;
+    aspect-ratio: 1/1;
+    /* width: 65px; */
+    padding: 1% 1.5%;
+    background-color: rgba(0, 0, 0, 0.329);
+    border-radius: 50px;
+    color: white;
+    font-size: 100%;
+}
+#search_bar_container{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+.option_slider{
+    outline: 2px solid rgb(112, 112, 112);
+    background-color: rgba(0, 0, 0, 0.329);;
+    border-radius: 50px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    transition: .2s all;
+}
+
+.option_slider a{
+    color: white;
+    padding: 20px;
+    
+}
+.option_slider a:nth-child(3) {
+    color: rgb(117, 117, 117);
+}
+.slider_bubble{
+    outline: 1px solid rgb(0, 0, 0);
+    position: absolute;
+    width: 45%;
+    border-radius: 50px;
+    aspect-ratio: 1/1;
+    left: 3%;
+    transition: .2s all;
+    background-color: rgb(54, 109, 54);
+    z-index: -1;
+}
+#filters_and_results {
+    /* outline: 2px solid rgb(0, 26, 255); */
+    /* height: 100%; */
+    display: flex;
+    justify-content: center;
+    margin:1.5% 1% 0px .5%;
+}
+#filters {
+    width: 20%;
+    background: rgb(182, 182, 182);
+    border-radius: 10px;
+    height: 45vh;
+    margin-top: .5%;
+}
+.shop {
+    outline: 3px solid rgba(230, 230, 230, 0.815);
+    border-radius: 10px;
+    width: 27%;
+    margin-top: .5%;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-bottom: 1%;
+    background-color: rgba(0, 0, 0, 0.233);
+    display: flex;
+    flex: none;
+    height: auto;
+    /* justify-content: space-between; */
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.shop img{
+    width: 80%;
+    margin-top: 5%;
+    margin-bottom: 2.5%;
+}
+.image_holder{
+    width: 80%;
+    aspect-ratio: 1/1;
+    outline: 1px solid rgba(0, 0, 0, 0.404);
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    font-size: 900%;
+    background-color: rgb(143, 142, 142);
+    margin-top: 6%;
+    box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.37);
+    background-image: none;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.result_card {
+    background-color: rgb(182, 182, 182);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: space-around; */
+    width: 92%;
+    /* height: 50%; */
+    transition: .4s all;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+.result_card:hover{
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.979);
+    transform: scale(1.07);
+}
+
+.result_card h3 {
+    margin: 0px 0px 0%, 0%;
+}
+.result_card h4 {
+    margin: 0px;
+    text-decoration: none;
+    font-weight: normal;
+    color: rgb(68, 68, 68);
+}
+.product_details{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+}
+.result_card a{
+    padding: 20px;
+    outline: 1px solid black;
+    border-radius: 20px;
+    margin-top: 2%;
+    margin-bottom: 6%;
+    background-color: rgb(60, 99, 60);
+    color: white;
+    transition: .3s all;
+}
+.result_card a:hover{
+    background-color: rgb(54, 109, 54);
+    /* text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.979); */
+    box-shadow: 3px 2px 20px rgba(0, 0, 0, 0.979);
+    transform: scale(1.07);
+}
+.result_card p{
+    margin: 1% 0% 1% 0%;
+}
+footer {
+    height: 20vh;
+    background: linear-gradient(90deg, rgba(15, 11, 15, 0.886), rgba(0, 0, 0, 0));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.5%;
+    /* position: abs */
+}
+footer h3{
+    color: white;
+    font-weight: normal;
+    
+}

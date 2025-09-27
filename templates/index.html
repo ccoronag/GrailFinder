@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--  -->
+        <!-- <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> -->
+         <link rel="stylesheet" href="../static/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
+    </head>
+    <body id="whole">
+        
+            <header id="splash">
+                <div>
+                    <h1>GrailFinder</h1>
+                    <a onclick="move_header()">Search</a>
+                </div>
+                
+            </header>
+            <section id="search_section">
+                <div id="content_container">
+                    <div id="UI_container">
+                        <h1>GrailFinder</h1>
+                        <div id="search_bar_container">
+                            <input id="input_bar"name="search_bar" type="text" placeholder="Find your favorite album...">
+                            <button type="submit" id="search_button"><i class="fa fa-search"></i></button>
+                            <div id="format_slider" class="option_slider" onclick="update_format_slider()">
+                                <div id="format_bubble" class="slider_bubble"><p>‎ </p></div>
+                                <a>Vinyl</a>
+                                <a>CD</a>
+                            </div>
+                        </div>
+                        
+                        
+                        <div id="filters_and_results">
+                            <div id="Discogs" class="shop">
+                                <h1 class="montserrat-light">Data from Discogs:</h1>
+
+                                
+
+                                
+
+
+                            </div>
+                            <div id="Ebay" class="shop">
+                                <h1 class="montserrat-light">Data from eBay:</h1>
+                            </div>
+                            
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+                
+            </section>
+            <footer>
+                <h3>GrailFinder uses Discogs’ API but is not affiliated with, sponsored or endorsed by Discogs. ‘Discogs’ is a trademark of Zink Media, LLC.</h3>
+                <h3>GrailFinder is not officially affiliated, associated, endorsed by, or in any way connected with eBay Inc., or any of its subsidiaries or affiliates. The names eBay and other related marks, emblems, brands, and images are registered trademarks of their respective owners</h3>
+            </footer>
+        
+    <!-- <script src="{{ url_for('static', filename='script.js') }}"></script> -->
+    <script src="../static/script.js"></script>
+    </body>
+</html>
