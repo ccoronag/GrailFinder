@@ -6,6 +6,7 @@ app = Flask(__name__)
 discogs = Discogs()
 ebay = Ebay()
 
+cache = {}
 
 @app.route("/")
 def index():
@@ -14,11 +15,17 @@ def index():
 
 @app.route("/search", methods=["POST"])
 def search():
-    query = request.json.get("query")
+    query = request.json.get("query").strip().lower()
 
+    if query in cache:
+        return jsonify(cache[query])
+    
     
     discogs_results = discogs.fetch_result(query)
     ebay_results = ebay.fetch_result(query)
+
+    cache[query] = {"discogs": discogs_results,
+                    "ebay": ebay_results}
 
     print(ebay_results)
     return jsonify({
