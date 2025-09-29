@@ -14,7 +14,7 @@ GrailFinder makes it easy to find records by finding data from eBay's and Discog
 
 ![Sample end of results view](assets/bottom%20page%20example.png)
 
-*To enable functionality create a ".env" file with the following format in the root folder of the repo:
+*To enable functionality create a ".env" file with the following format in the root folder of the repo:  
 DISCOGS_KEY= "your_key"  
 DISCOGS_SECRET= "your_secret"
 
