@@ -13,3 +13,11 @@ GrailFinder makes it easy to find records by finding data from eBay's and Discog
 ![Sample search three](assets/Search%20Example%203.png)
 
 ![Sample end of results view](assets/bottom%20page%20example.png)
+
+*To enable functionality create a ".env" file with the following format within the root folder of the repo:
+DISCOGS_KEY= "your_key"
+DISCOGS_SECRET= "your_secret"
+
+EBAY_APPID= "your_appid"
+EBAY_SECRET= "your_secret"
+*
