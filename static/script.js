@@ -100,7 +100,9 @@ document.getElementById("search_button").addEventListener("click", async () => {
         price.textContent = "Shop on Discogs starting at: $" + item.lowest_price;
         price.href = item.address;
 
-        prod_details.appendChild(title);
+        if (title != null) {
+            prod_details.appendChild(title);
+        }
         prod_details.appendChild(artist);
         prod_details.appendChild(release);
         prod_details.appendChild(format);

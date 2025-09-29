@@ -57,7 +57,7 @@ class Discogs():
         query = urllib.parse.quote(query)
         url = f"https://api.discogs.com/database/search?type=master&query={query}&per_page=1&page=1&{self.auth}"
         response_json = self.send_request(url)
-
+        # print(response_json)
         if response_json != None: result_id = response_json["results"][0]["id"]
         else: return
 
@@ -73,6 +73,8 @@ class Discogs():
         for result in results:
             individual_search_url = f"https://api.discogs.com/marketplace/stats/{result["id"]}?{self.auth}"
             release_result_json = self.send_request(individual_search_url)
+            if not release_result_json:
+                continue
             address = f"https://www.discogs.com/release/{result["id"]}"
 
 
