@@ -26,6 +26,13 @@ def search():
         "ebay": ebay_results
     })
 
+@app.route("/picks")
+def weekly_picks():
+    discogs_picks = discogs.fetch_picks()
+    print(discogs_picks)
+    return jsonify({
+        "discogs": discogs_picks
+    })
 
 if __name__ == "__main__":
     app.run(debug=True)

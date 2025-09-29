@@ -91,3 +91,31 @@ class Discogs():
             count += 1
 
         return fetched_results
+    
+    def fetch_picks(self):
+        with open("weekly_picks.json") as f:
+            picks = json.load(f)
+        
+        picks_data = []
+        for master_id in picks["master_ids"]:
+            url = f"https://api.discogs.com/masters/{master_id}?{self.auth}"
+            result = self.send_request(url)
+            # print(result)
+            picks_data.append({
+                "address": f"https://www.discogs.com/master/{master_id}",
+                "thumb": self.check_img_quality(result.get("images")),
+                "title": result.get("title"),
+                "artist": result.get("artists")[0]["name"],
+                "released": result.get("year"),
+                "lowest_price": result.get("lowest_price")
+            })
+        
+        return picks_data
+
+    def check_img_quality(self, images: dict) :
+        for image in images:
+            if image.get("type") == "primary":
+                return image.get("uri")
+
+        return None
+        

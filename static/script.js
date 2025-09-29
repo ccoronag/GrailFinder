@@ -155,6 +155,65 @@ document.getElementById("search_button").addEventListener("click", async () => {
         ebayDiv.appendChild(card);
     });
 
+});
+
+document.addEventListener("DOMContentLoaded", async () => {
+    const response = await fetch("/picks", {
+        method: "GET"
     });
 
+    const picks_data = await response.json();
 
+    const targetDiv = document.getElementById("week_picks");
+
+    console.log(picks_data);
+    picks_data.discogs.forEach(item => {
+        const card = document.createElement("div");
+        card.classList.add("result_card");
+
+        const img_holder = document.createElement("div");
+        img_holder.classList.add("small_image_holder");
+        if (item.thumb != null) {
+            img_holder.style.backgroundImage = 'url("' + item.thumb + '")';
+        }
+        else {
+            img_holder.innerHTML = "&#9835;";
+        }
+        
+        const prod_details = document.createElement("div");
+        prod_details.classList.add("product_details");
+
+        const title = document.createElement("h3");
+        title.textContent = item.title;
+
+        const artist = document.createElement("h4");
+        artist.textContent = item.artist;
+
+        const release = document.createElement("p");
+        release.textContent = item.released;
+
+        const price = document.createElement("a");
+        if (item.lowest_price != null) {
+            price.textContent = "Shop on Discogs starting at: $" + item.lowest_price;
+        }
+        else {
+            price.textContent = "View on Discogs";
+            price.style.backgroundColor = "grey";
+        }
+        price.href = item.address;
+
+        const disclaimer = document.createElement("h3");
+        disclaimer.textContent = "Data provided by Discogs.";
+
+        prod_details.appendChild(title);
+        prod_details.appendChild(artist);
+        prod_details.appendChild(release);
+        prod_details.appendChild(price);
+        prod_details.appendChild(disclaimer);
+
+        card.appendChild(img_holder);
+        card.appendChild(prod_details);
+
+        targetDiv.appendChild(card);
+    });
+});
